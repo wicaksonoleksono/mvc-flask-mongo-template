@@ -1,0 +1,65 @@
+openapi: 2.0
+info:
+  title: Todo API
+  description: API for managing Todos
+  version: 1.0.0
+paths:
+  /todo:
+    get:
+      summary: Get all todos
+      description: Returns a list of all todos
+      responses:
+        200:
+          description: A list of todos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Todo'
+
+  /todo/{todo_id}:
+    get:
+      summary: Get a todo by ID
+      description: Returns a single todo
+      parameters:
+        - name: todo_id
+          in: path
+          required: true
+          schema:
+            type: string
+            description: The ObjectId of the todo in MongoDB
+      responses:
+        200:
+          description: A single todo
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Todo'
+        404:
+          description: Todo not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  err:
+                    type: string
+
+components:
+  schemas:
+    Todo:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique identifier for the todo item (MongoDB ObjectId)
+        title:
+          type: string
+          description: The title of the todo item
+        description:
+          type: string
+          description: The detailed description of the todo item
+        completed:
+          type: boolean
+          description: The status of whether the todo item is completed or not
