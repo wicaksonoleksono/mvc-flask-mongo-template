@@ -1,26 +1,20 @@
----
-tags:
-  - CRUD_TODO
+# docs/todo/delete_todo.yaml
 summary: Delete a todo
-description: Delete a specific todo by its ID.
+description: This endpoint allows you to delete a todo item by its ID.
 parameters:
   - name: todo_id
     in: path
+    type: string
     required: true
-    description: The ID of the todo to delete
-    schema:
-      type: string
+    description: The ID of the todo item
 responses:
   200:
-    description: Todo deleted successfully
-    content:
-      application/json:
-        schema:
-          type: object
-          properties:
-            message:
-              type: string
-              description: A success message
+    description: Todo item deleted successfully
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
   400:
     description: Invalid ID provided
   404:

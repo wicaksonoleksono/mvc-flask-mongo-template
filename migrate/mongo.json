@@ -1,0 +1,27 @@
+{
+    "migrations": [
+      {
+        "description": "Add status field to todos",
+        "operation": "update_many",
+        "collection": "todos",
+        "query": {},
+        "update": {
+          "$set": {
+            "status": "pending"
+          }
+        }
+      },
+      {
+        "description": "Update priority field to be mandatory",
+        "operation": "update_many",
+        "collection": "todos",
+        "query": {},
+        "update": {
+          "$set": {
+            "priority": "low"
+          }
+        }
+      }
+    ]
+  }
+  

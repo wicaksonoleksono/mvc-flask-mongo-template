@@ -9,6 +9,8 @@ todo_model = Todo()
 
 
 # CLASSIC CRUD ..
+
+
 # Route for getting all todos
 @todo_bp.route("", methods=["GET"])
 @swag_from("../docs/todo/get_todos.yaml", methods=["GET"])

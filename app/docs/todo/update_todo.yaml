@@ -1,45 +1,38 @@
----
-tags:
-  - CRUD_TODO
+# docs/todo/update_todo.yaml
 summary: Update an existing todo
-description: Update the title, description, or completion status of an existing todo.
+description: This endpoint allows you to update an existing todo item.
 parameters:
   - name: todo_id
     in: path
+    type: string
     required: true
-    description: The ID of the todo to update
+    description: The ID of the todo item
+  - name: body
+    in: body
+    required: true
     schema:
-      type: string
-requestBody:
-  required: true
-  content:
-    application/json:
-      schema:
-        type: object
-        properties:
-          title:
-            type: string
-            description: The new title of the todo
-          description:
-            type: string
-            description: The new description of the todo
-          completed:
-            type: boolean
-            description: The new completion status of the todo
+      type: object
+      properties:
+        title:
+          type: string
+          description: The title of the todo item.
+        description:
+          type: string
+          description: The description of the todo item.
+        completed:
+          type: boolean
+          description: The completion status of the todo item.
 responses:
   200:
-    description: Todo updated successfully
-    content:
-      application/json:
-        schema:
-          type: object
-          properties:
-            message:
-              type: string
-              description: A success message
+    description: Todo item updated successfully
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
   400:
-    description: Bad request
+    description: Invalid input data
   404:
-    description: Todo not found
+    description: Todo not found or no changes made
   500:
     description: Server error

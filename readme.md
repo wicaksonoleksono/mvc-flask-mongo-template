@@ -83,9 +83,27 @@ python index.py
 
 (depending on whether you're using `Pipenv` or `pip`).
 
+
+
+# Running pytest for api testing/ unit testing.
+go to the test directory then , run this 
+naming conventions for pytest you can refer to this [Documentation](https://docs.pytest.org/en/stable/example/pythoncollection.html#changing-naming-conventions)
+```py
+pytest --cov=your_package_name --cov-report=term-missing
+
+```
+
+example : 
+```py
+pytest --cov=app --cov-report=html 
+
+```
+This checks your coverage then print it to html that you can open using quokka or Live server
+This is the example of the output expected in the html 
+
+![alt text](image.png)
+
 ## Additional Notes
 
 - If you're contributing to the project, please make sure to follow the same Python version and environment setup to avoid any compatibility issues.
 - Feel free to add more instructions based on your project's specific needs. 
-
-

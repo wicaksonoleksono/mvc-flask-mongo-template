@@ -1,35 +1,26 @@
----
-tags:
-  - CRUD_TODO
-summary: Get a todo by ID
-description: Retrieve a specific todo by its ID.
+# docs/todo/get_todo_by_id.yaml
+summary: Retrieve a todo by ID
+description: This endpoint returns a specific todo item by its ID.
 parameters:
   - name: todo_id
     in: path
+    type: string
     required: true
-    description: The ID of the todo to retrieve
-    schema:
-      type: string
+    description: The ID of the todo item
 responses:
   200:
-    description: The requested todo
-    content:
-      application/json:
-        schema:
-          type: object
-          properties:
-            _id:
-              type: string
-              description: The todo ID
-            title:
-              type: string
-              description: The title of the todo
-            description:
-              type: string
-              description: The description of the todo
-            completed:
-              type: boolean
-              description: The completion status of the todo
+    description: A single todo item
+    schema:
+      type: object
+      properties:
+        _id:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        completed:
+          type: boolean
   404:
     description: Todo not found
   500:
