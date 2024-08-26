@@ -1,0 +1,29 @@
+---
+tags:
+  - CRUD_TODO
+summary: Delete a todo
+description: Delete a specific todo by its ID.
+parameters:
+  - name: todo_id
+    in: path
+    required: true
+    description: The ID of the todo to delete
+    schema:
+      type: string
+responses:
+  200:
+    description: Todo deleted successfully
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            message:
+              type: string
+              description: A success message
+  400:
+    description: Invalid ID provided
+  404:
+    description: Todo not found
+  500:
+    description: Server error

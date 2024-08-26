@@ -1,12 +1,11 @@
 from bson.objectid import ObjectId
-from bson.json_util import dumps, loads
 from app.connection.connection import MongoDBConnector
 
 
 class Todo:
     def __init__(self) -> None:
         self.db = MongoDBConnector().get_db()
-        self.collection = self.db.todos
+        self.collection = self.db.todo
 
     # utility function
     def create_todo(self, title, description):
@@ -16,7 +15,7 @@ class Todo:
 
     def get_all_todos(self):
         todos = self.collection.find()
-        return list(todos)  # Return as a list of dictionaries
+        return list(todos)
 
     def get_todo_by_id(self, todo_id):
         if not self.is_valid_objectid(todo_id):
@@ -53,4 +52,9 @@ class Todo:
             return False
 
     def to_json(self, data):
-        return loads(dumps(data))
+        if isinstance(data, list):
+            for item in data:
+                item["_id"] = str(item["_id"])
+        elif isinstance(data, dict):
+            data["_id"] = str(data["_id"])
+        return data

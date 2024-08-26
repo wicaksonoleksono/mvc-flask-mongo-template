@@ -9,7 +9,5 @@ class MongoDBConnector:
         self.db = self.client[Config.DB_NAME]
 
     def get_db(self):
-        print(f"{Config.USERNAME}")
-        print(f"{Config.PASSWORD}")
-        print(f"{Config.DB_URI}")
+        print(f"connecting to {Config.DB_URI}")
         return self.db

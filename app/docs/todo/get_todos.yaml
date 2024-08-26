@@ -1,0 +1,29 @@
+---
+tags:
+  - CRUD_TODO
+summary: Get all todos
+description: Retrieve all todos from the database.
+responses:
+  200:
+    description: A list of todos
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            type: object
+            properties:
+              _id:
+                type: string
+                description: The todo ID
+              title:
+                type: string
+                description: The title of the todo
+              description:
+                type: string
+                description: The description of the todo
+              completed:
+                type: boolean
+                description: The completion status of the todo
+  500:
+    description: Server error

@@ -7,7 +7,7 @@ from app.controllers.Todo import todo_bp
 
 app = Flask(__name__)
 
-
+app.config["SWAGGER"] = Config.get_swagger_config()
 swagger = Swagger(app)
 
 # reg blueprints here

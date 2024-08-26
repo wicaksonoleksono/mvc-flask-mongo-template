@@ -1,0 +1,39 @@
+---
+tags:
+  - CRUD_TODO
+summary: Create a new todo
+description: Create a new todo item in the database.
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        type: object
+        required:
+          - title
+          - description
+        properties:
+          title:
+            type: string
+            description: The title of the todo
+          description:
+            type: string
+            description: The description of the todo
+responses:
+  200:
+    description: Todo created successfully
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            message:
+              type: string
+              description: A success message
+            id:
+              type: string
+              description: The ID of the created todo
+  400:
+    description: Bad request
+  500:
+    description: Server error
