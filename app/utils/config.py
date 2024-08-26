@@ -19,7 +19,7 @@ class Config:
             "title": "flask-mongodb mongo with MVC pattern ",
             "uiversion": 3,
             "description": "todo app ",
-            "version": "1.0.0",
+            "version": ": -> ) what version is this?",
             "termsOfService": "tos-tos-tos",
             "contact": {
                 "name": "wicaksonolxn",
@@ -48,7 +48,7 @@ class Config:
                 "termsOfService": "tos-tos-tos",
                 "contact": {
                     "name": "wicaksonolxn",
-                    "url": "https://example.com/contact",
+                    "url": "https://intip.in/portofoliowicak/",
                     "email": "wicaksonolxn@gmail.com",
                 },
                 "license": {

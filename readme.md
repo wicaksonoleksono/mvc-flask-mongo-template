@@ -101,7 +101,17 @@ pytest --cov=app --cov-report=html
 This checks your coverage then print it to html that you can open using quokka or Live server
 This is the example of the output expected in the html 
 
-![alt text](image.png)
+![unit_test](images/image.png)
+
+
+# Documentation
+this template provide documentation using OpenApi's Swagger from the [flasgger library](https://github.com/flasgger/flasgger)
+
+to acess your swagger-UI (view) use acess it through </br>
+`{{your_base_url}}/apidocs`
+
+this is what will you expect from acessing it 
+![swagger](images/image-1.png)
 
 ## Additional Notes
 
