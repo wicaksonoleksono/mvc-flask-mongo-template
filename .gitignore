@@ -1,3 +1,5 @@
 .env
 __vnev__
 __pycache__
+Pipfile
+Pipfile.lock

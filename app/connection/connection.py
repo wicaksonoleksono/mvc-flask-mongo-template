@@ -1,6 +1,6 @@
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
-from app.config import Config
+from app.utils.config import Config
 
 
 class MongoDBConnector:
